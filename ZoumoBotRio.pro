@@ -1,4 +1,4 @@
-update=11/9/2017 10:22:02 PM
+update=11/10/2017 3:39:21 PM
 version=1
 last_client=kicad
 [pcbnew]
@@ -59,4 +59,4 @@ LibName27=opto
 LibName28=atmel
 LibName29=contrib
 LibName30=valves
-LibName31=C:/Users/Patrick/Google Drive/KiCad Resources/NeoPixel_Sym/neopixel
+LibName31=C:/Users/Patrick/Google Drive/KiCad Resources/MyKicad-Symbols/NeoPixel_Sym/neopixel
