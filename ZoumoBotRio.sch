@@ -29,7 +29,7 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:ZoumoBotRio-cache
+LIBS:neopixel
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -136,7 +136,7 @@ F 3 "" H 3650 3875 50  0000 C CNN
 $EndComp
 Text GLabel 2350 3525 0    60   Input ~ 0
 D+
-Text GLabel 2575 3625 0    60   Input ~ 0
+Text GLabel 2125 3625 0    60   Input ~ 0
 D-
 $Comp
 L Crystal_Small Y1
@@ -185,12 +185,12 @@ $EndComp
 $Comp
 L GND #PWR05
 U 1 1 59F946FB
-P 3750 5725
-F 0 "#PWR05" H 3750 5475 50  0001 C CNN
-F 1 "GND" H 3750 5575 50  0000 C CNN
-F 2 "" H 3750 5725 50  0000 C CNN
-F 3 "" H 3750 5725 50  0000 C CNN
-	1    3750 5725
+P 3750 6175
+F 0 "#PWR05" H 3750 5925 50  0001 C CNN
+F 1 "GND" H 3750 6025 50  0000 C CNN
+F 2 "" H 3750 6175 50  0000 C CNN
+F 3 "" H 3750 6175 50  0000 C CNN
+	1    3750 6175
 	1    0    0    -1  
 $EndComp
 Text GLabel 6325 5625 2    60   Input ~ 0
@@ -436,34 +436,23 @@ Text GLabel 850  6650 0    60   Input ~ 0
 +5V
 Text GLabel 2100 3425 0    60   Input ~ 0
 UVcc
-$Comp
-L USB_OTG-RESCUE-ZoumoBotRio P1
-U 1 1 59FC8005
-P 1000 2775
-F 0 "P1" H 1325 2650 50  0000 C CNN
-F 1 "USB_OTG" H 1000 2975 50  0000 C CNN
-F 2 "Connectors:USB_Micro-B" V 950 2675 50  0001 C CNN
-F 3 "" V 950 2675 50  0000 C CNN
-	1    1000 2775
-	1    0    0    -1  
-$EndComp
 Text Notes 800  2325 0    60   ~ 0
 Reset Switch
-Text GLabel 800  3175 3    60   Input ~ 0
+Text GLabel 800  3525 3    60   Input ~ 0
 UVcc
-Text GLabel 1000 3175 3    60   Input ~ 0
+Text GLabel 1000 3125 3    60   Input ~ 0
 D+
-Text GLabel 900  3475 3    60   Input ~ 0
+Text GLabel 900  3325 3    60   Input ~ 0
 D-
 $Comp
 L GND #PWR011
 U 1 1 59FC8825
-P 1200 3175
-F 0 "#PWR011" H 1200 2925 50  0001 C CNN
-F 1 "GND" H 1200 3025 50  0000 C CNN
-F 2 "" H 1200 3175 50  0000 C CNN
-F 3 "" H 1200 3175 50  0000 C CNN
-	1    1200 3175
+P 1200 3450
+F 0 "#PWR011" H 1200 3200 50  0001 C CNN
+F 1 "GND" H 1200 3300 50  0000 C CNN
+F 2 "" H 1200 3450 50  0000 C CNN
+F 3 "" H 1200 3450 50  0000 C CNN
+	1    1200 3450
 	1    0    0    -1  
 $EndComp
 NoConn ~ 1100 3075
@@ -732,13 +721,13 @@ $EndComp
 $Comp
 L NeoPixel LED6
 U 1 1 5A003FD6
-P 10500 1200
-F 0 "LED6" H 10500 1350 60  0000 C CNN
-F 1 "NeoPixel" H 10500 1000 60  0000 C CNN
-F 2 "NeoPixel:WS2812B_smallsilk" H 10500 1300 60  0001 C CNN
-F 3 "" H 10500 1300 60  0001 C CNN
-	1    10500 1200
-	-1   0    0    -1  
+P 10550 1200
+F 0 "LED6" H 10550 1350 60  0000 C CNN
+F 1 "NeoPixel" H 10550 1000 60  0000 C CNN
+F 2 "NeoPixel:WS2812B_smallsilk" H 10550 1300 60  0001 C CNN
+F 3 "" H 10550 1300 60  0001 C CNN
+	1    10550 1200
+	1    0    0    -1  
 $EndComp
 Text Notes 9050 1600 0    60   ~ 0
 RGB LEDS
@@ -1313,7 +1302,7 @@ Wire Wire Line
 	3275 5325 3275 5450
 Connection ~ 3275 5325
 Wire Wire Line
-	3750 5325 3750 5725
+	3750 5325 3750 5850
 Connection ~ 3750 5425
 Connection ~ 3750 5525
 Connection ~ 3750 5625
@@ -1437,18 +1426,9 @@ Wire Notes Line
 Wire Notes Line
 	1750 2375 475  2375
 Wire Wire Line
-	800  3175 800  3075
+	1000 3125 1000 3075
 Wire Wire Line
-	1000 3175 1000 3075
-Wire Wire Line
-	1200 3075 1200 3175
-Wire Wire Line
-	900  3475 900  3075
-Wire Wire Line
-	1400 2675 1400 3100
-Wire Wire Line
-	1400 3100 1200 3100
-Connection ~ 1200 3100
+	900  3325 900  3075
 Wire Notes Line
 	1750 4000 475  4000
 Wire Wire Line
@@ -1766,7 +1746,7 @@ Wire Wire Line
 Wire Wire Line
 	3750 3625 3125 3625
 Wire Wire Line
-	2925 3625 2575 3625
+	2125 3625 2925 3625
 Wire Wire Line
 	850  6175 900  6175
 Wire Wire Line
@@ -1852,4 +1832,141 @@ Text Label 3275 3525 0    60   ~ 0
 D+
 Text Label 3400 3625 0    60   ~ 0
 D-
+$Comp
+L C_Small C23
+U 1 1 5A0639BE
+P 2300 3875
+F 0 "C23" H 2310 3945 50  0000 L CNN
+F 1 "C_Small" H 2310 3795 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 2300 3875 50  0001 C CNN
+F 3 "" H 2300 3875 50  0001 C CNN
+	1    2300 3875
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR030
+U 1 1 5A064618
+P 2300 4200
+F 0 "#PWR030" H 2300 3950 50  0001 C CNN
+F 1 "GND" H 2300 4050 50  0000 C CNN
+F 2 "" H 2300 4200 50  0001 C CNN
+F 3 "" H 2300 4200 50  0001 C CNN
+	1    2300 4200
+	1    0    0    -1  
+$EndComp
+Connection ~ 2300 3625
+Wire Wire Line
+	2550 4125 2300 4125
+Connection ~ 2300 4125
+$Comp
+L Ferrite_Bead_Small L3
+U 1 1 5A0660C9
+P 1400 3025
+F 0 "L3" H 1475 3075 50  0000 L CNN
+F 1 "Ferrite_Bead_Small" H 1475 2975 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 1330 3025 50  0001 C CNN
+F 3 "" H 1400 3025 50  0001 C CNN
+	1    1400 3025
+	1    0    0    -1  
+$EndComp
+$Comp
+L USB_OTG-RESCUE-ZoumoBotRio P1
+U 1 1 59FC8005
+P 1000 2775
+F 0 "P1" H 1325 2650 50  0000 C CNN
+F 1 "USB_OTG" H 1000 2975 50  0000 C CNN
+F 2 "Connectors:USB_Micro-B" V 950 2675 50  0001 C CNN
+F 3 "" V 950 2675 50  0000 C CNN
+	1    1000 2775
+	1    0    0    -1  
+$EndComp
+$Comp
+L Ferrite_Bead_Small L2
+U 1 1 5A0665FF
+P 1200 3175
+F 0 "L2" H 1275 3225 50  0000 L CNN
+F 1 "Ferrite_Bead_Small" H 1275 3125 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 1130 3175 50  0001 C CNN
+F 3 "" H 1200 3175 50  0001 C CNN
+	1    1200 3175
+	1    0    0    -1  
+$EndComp
+$Comp
+L Ferrite_Bead_Small L1
+U 1 1 5A066BC7
+P 800 3175
+F 0 "L1" H 875 3225 50  0000 L CNN
+F 1 "Ferrite_Bead_Small" H 875 3125 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 730 3175 50  0001 C CNN
+F 3 "" H 800 3175 50  0001 C CNN
+	1    800  3175
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1200 3275 1200 3450
+Wire Wire Line
+	1400 3125 1400 3350
+Wire Wire Line
+	1400 3350 1200 3350
+Connection ~ 1200 3350
+Wire Wire Line
+	1400 2925 1400 2675
+Wire Wire Line
+	800  3275 800  3525
+Wire Wire Line
+	2300 3625 2300 3775
+Connection ~ 2550 3525
+Wire Wire Line
+	2300 3975 2300 4200
+$Comp
+L C_Small C24
+U 1 1 5A069DAE
+P 2550 3875
+F 0 "C24" H 2560 3945 50  0000 L CNN
+F 1 "C_Small" H 2560 3795 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 2550 3875 50  0001 C CNN
+F 3 "" H 2550 3875 50  0001 C CNN
+	1    2550 3875
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2550 4125 2550 3975
+Wire Wire Line
+	2550 3775 2550 3525
+$Comp
+L Ferrite_Bead_Small L4
+U 1 1 5A06FB61
+P 3750 5950
+F 0 "L4" H 3825 6000 50  0000 L CNN
+F 1 "Ferrite_Bead_Small" H 3825 5900 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 3680 5950 50  0001 C CNN
+F 3 "" H 3750 5950 50  0001 C CNN
+	1    3750 5950
+	1    0    0    -1  
+$EndComp
+$Comp
+L C_Small C25
+U 1 1 5A071022
+P 3550 5950
+F 0 "C25" H 3560 6020 50  0000 L CNN
+F 1 "C_Small" H 3560 5870 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 3550 5950 50  0001 C CNN
+F 3 "" H 3550 5950 50  0001 C CNN
+	1    3550 5950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 5850 3550 5700
+Wire Wire Line
+	3550 5700 3750 5700
+Connection ~ 3750 5700
+Wire Wire Line
+	3550 6050 3550 6100
+Wire Wire Line
+	3550 6100 3750 6100
+Wire Wire Line
+	3750 6050 3750 6175
+Connection ~ 3750 6100
+Text Label 3550 5775 2    60   ~ 0
+dGnd
 $EndSCHEMATC
