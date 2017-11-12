@@ -29,7 +29,7 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:ZoumoBotRio-cache
+LIBS:neopixel
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -721,13 +721,13 @@ $EndComp
 $Comp
 L NeoPixel LED6
 U 1 1 5A003FD6
-P 10500 1200
-F 0 "LED6" H 10500 1350 60  0000 C CNN
-F 1 "NeoPixel" H 10500 1000 60  0000 C CNN
-F 2 "NeoPixel:WS2812B_smallsilk" H 10500 1300 60  0001 C CNN
-F 3 "" H 10500 1300 60  0001 C CNN
-	1    10500 1200
-	-1   0    0    -1  
+P 10550 1200
+F 0 "LED6" H 10550 1350 60  0000 C CNN
+F 1 "NeoPixel" H 10550 1000 60  0000 C CNN
+F 2 "NeoPixel:WS2812B_smallsilk" H 10550 1300 60  0001 C CNN
+F 3 "" H 10550 1300 60  0001 C CNN
+	1    10550 1200
+	1    0    0    -1  
 $EndComp
 Text Notes 9050 1600 0    60   ~ 0
 RGB LEDS
@@ -1968,5 +1968,5 @@ Wire Wire Line
 	3750 6050 3750 6175
 Connection ~ 3750 6100
 Text Label 3550 5775 2    60   ~ 0
-digitalGround
+dGnd
 $EndSCHEMATC

@@ -1945,12 +1945,12 @@ F 3 "" H 3750 5950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C_Small C?
+L C_Small C25
 U 1 1 5A071022
 P 3550 5950
-F 0 "C?" H 3560 6020 50  0000 L CNN
+F 0 "C25" H 3560 6020 50  0000 L CNN
 F 1 "C_Small" H 3560 5870 50  0000 L CNN
-F 2 "" H 3550 5950 50  0001 C CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 3550 5950 50  0001 C CNN
 F 3 "" H 3550 5950 50  0001 C CNN
 	1    3550 5950
 	1    0    0    -1  
@@ -1967,4 +1967,6 @@ Wire Wire Line
 Wire Wire Line
 	3750 6050 3750 6175
 Connection ~ 3750 6100
+Text Label 3550 5775 2    60   ~ 0
+digitalGround
 $EndSCHEMATC
